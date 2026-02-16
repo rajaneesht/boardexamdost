@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     { "src": "frontend/package.json", "use": "@vercel/static-build" },
-    { "src": "backend/server.js", "use": "@vercel/node" }
+    { "src": "api/server.js", "use": "@vercel/node" }
   ],
   "rewrites": [
     { "source": "/api-proxy", "destination": "/backend/server.js" },
