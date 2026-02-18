@@ -165,7 +165,7 @@ function getRequestHeaders(accessToken) {
 }
 
 // --- Proxy Endpoint ---
-app.post('*', async (req, res) => {
+app.all('*', async (req, res) => {
   if (req.headers['x-app-proxy'] !== 'local-vertex-ai-app' && process.env.NODE_ENV !== 'production') {
      // Optional: You might want to remove this check or allow Vercel's production URL
   }
