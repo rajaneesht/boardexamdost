@@ -1,18 +1,28 @@
 {
   "version": 2,
   "trailingSlash": false,
-  "rewrites": [
+  "builds": [
     {
-      "source": "/api-proxy",
-      "destination": "/api/index"
+      "src": "frontend/dist/**",
+      "use": "@vercel/static"
     },
     {
-      "source": "/assets/:path*",
-      "destination": "/frontend/dist/assets/:path*"
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api-proxy",
+      "dest": "/api/index.js"
     },
     {
-      "source": "/:path*",
-      "destination": "/frontend/dist/index.html"
+      "src": "/assets/(.*)",
+      "dest": "/frontend/dist/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/dist/index.html"
     }
   ]
 }
