@@ -186,7 +186,19 @@ app.all('/{*path}', async (req, res) => {
     const apiUrl  = apiClient.getApiEndpoint(context, extractedParams);
 
     // Strip hop-by-hop / sensitive headers forwarded from the client
-    const { host, authorization, 'content-length': _cl, ...safeHeaders } = headers;
+    //const { host, authorization, 'content-length': _cl, ...safeHeaders } = headers;
+    const { 
+      host, 
+      authorization, 
+      'content-length': _cl,
+      'x-goog-api-key': _apiKey,
+      ...safeHeaders 
+    } = headers;
+    
+    // Restore API key for Reasoning Engine calls (they use API key auth)
+    if (!apiClient.name.startsWith('VertexGenAi') && headers['x-goog-api-key']) {
+      safeHeaders['x-goog-api-key'] = headers['x-goog-api-key'];
+    }
 
     const apiFetchOptions = {
       method:  method || 'POST',
