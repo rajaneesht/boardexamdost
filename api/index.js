@@ -161,7 +161,7 @@ app.use(
 
 // ─── Proxy Handler ────────────────────────────────────────────────────────────
 
-app.all('*', async (req, res) => {
+app.all('/{*path}', async (req, res) => {
   const { originalUrl, method, headers = {}, body } = req.body ?? {};
 
   if (!originalUrl) {
