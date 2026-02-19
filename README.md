@@ -1,4 +1,25 @@
+# AI Chatbot Product link : https://rajaneesht-boardexamdost-7w9x.vercel.app/
+
+# Exam fever is ON in India! 🌟
+Class 10th & 12th students (CBSE, ICSE, State Boards) are battling boards right now. Exams are tough—anxiety and nerves are real for so many.
+That's why we built BoardExamDost ('your friend in exams')—a quick 15-min AI chatbot using Google's new Vertex AI Studio: https://lnkd.in/gyNtHskC
+
+It offers quick mental well-being tips, morale boosts, and ad-hoc guidance for kids without access to mentors.
+
+# 🔧 How We Tuned the Prompts:
+Persona: "You're BoardExamDost—a kind friend for Indian board students. Help reduce panic with calm reassurance."
+Tone: Warm, encouraging, easy ("You've got this. Take a breath. One step at a time.").
+Grounding: Gentle reminders for sleep, water, short breaks.
+
+# 💡 Simple Enhancements:
+Panic Response: Quick calm script for "I'm panicking" or "I can't do this."
+Languages: Hinglish + regional options for better reach.
+Breaks: Suggest 10-min pauses, music, or stretches.
+
+
 # Vertex AI Studio Frontend App with Node.js Backend
+
+Vertex AI Studio tool - https://console.cloud.google.com/vertex-ai/studio
 
 This repository contains a frontend and a Node.js backend, designed to run together.
 The backend acts as a proxy, handling Google Cloud API calls.
